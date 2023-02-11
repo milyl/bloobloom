@@ -1,6 +1,6 @@
-// background color
+// color
 $white: #ffffff;
-
+$black: #000000;
 // Fonts
 
 
@@ -11,16 +11,14 @@ $radius: 10px;
 $radius-sm: 5px;
 $radius-full: 50rem;
 
-$font-size-extra-small: 0.8rem;
-$font-size-small: 1rem;
-$font-size: 1.3rem;
-$font-size-medium: 1.6rem;
-$font-size-large: 1.8rem;
-$font-size-extra-large: 2.4rem;
-$font-size-extra-extra-large: 3.6rem;
-
+$font-size-small: 1.2rem;
+$font-size: 1.6rem;
+$font-size-medium: 1.8rem;
+$font-size-large: 2rem;
 // Font weights
-
+$font-weight-normal: 400;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
 
 $-z-1: -1; // graphical elements under text
 $z-0: 0; // base
@@ -56,6 +54,8 @@ $gap-xs: map-get($sizes, 'xs');
 $gap-sm: 1rem;
 $gap-md: map-get($sizes, 'md');
 $gap-lg: map-get($sizes, 'lg');
+
+$top-navigation-height: 5rem;
 
 $browser-root-font-small:         75.00%; // 12/16  = 75.00%
 $browser-root-font-medium:        75.00%; // 12/16  = 75.00%
