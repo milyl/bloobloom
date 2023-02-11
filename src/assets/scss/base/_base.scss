@@ -1,0 +1,31 @@
+@import '../abstracts/variables';
+@import '../abstracts/breakpoints';
+@import '../base/typography';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: $browser-root-font;
+  background-color: $white;
+  letter-spacing: 0.02rem;
+
+  @include respond(xxxl) {
+    font-size: $browser-root-font-xxxl;
+  }
+  @include respond(xxl) {
+    font-size: $browser-root-font-xxl;
+  }
+  @include respond(lg) {
+    font-size: $browser-root-font-large;
+  }
+  @include respond(md) {
+    font-size: $browser-root-font-medium;
+  }
+  @include respond(sm) {
+    font-size: $browser-root-font-small;
+  }
+}
