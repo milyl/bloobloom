@@ -1,0 +1,67 @@
+// background color
+$white: #ffffff;
+
+// Fonts
+
+
+$main-app-container-width: 144rem;
+$invitation-center-max-width: 81rem;
+// Sizes
+$radius: 10px;
+$radius-sm: 5px;
+$radius-full: 50rem;
+
+$font-size-extra-small: 0.8rem;
+$font-size-small: 1rem;
+$font-size: 1.3rem;
+$font-size-medium: 1.6rem;
+$font-size-large: 1.8rem;
+$font-size-extra-large: 2.4rem;
+$font-size-extra-extra-large: 3.6rem;
+
+// Font weights
+
+
+$-z-1: -1; // graphical elements under text
+$z-0: 0; // base
+$z-1: 1; // tooltip
+$z-2: 2; // notification, dropdown
+$z-3: 3; // ie. modal, important communication
+$z-10: 10; // ie. buffer bar, sticky menu bar
+
+$sizes: (
+  'xs': 0.8rem,
+  'sm': 1.2rem,
+  'md': 1.6rem,
+  'lg': 2.4rem,
+  'xl': 3.2rem,
+  '2xl': 4.8rem,
+);
+
+$p-xs: map-get($sizes, 'xs');
+$p-sm: map-get($sizes, 'sm');
+$p-md: map-get($sizes, 'md');
+$p-lg: map-get($sizes, 'lg');
+$p-xl: map-get($sizes, 'xl');
+$p-2xl: map-get($sizes, '2xl');
+
+$m-xs: map-get($sizes, 'xs');
+$m-sm: map-get($sizes, 'sm');
+$m-md: map-get($sizes, 'md');
+$m-lg: map-get($sizes, 'lg');
+$m-xl: map-get($sizes, 'xl');
+$m-2xl: map-get($sizes, '2xl');
+
+$gap-xs: map-get($sizes, 'xs');
+$gap-sm: 1rem;
+$gap-md: map-get($sizes, 'md');
+$gap-lg: map-get($sizes, 'lg');
+
+$browser-root-font-small:         75.00%; // 12/16  = 75.00%
+$browser-root-font-medium:        75.00%; // 12/16  = 75.00%
+$browser-root-font-large:         75.00%; // 12/16  = 75.00%
+// ---- Do not change root font size
+$browser-root-font:               62.50%; // 10/16  = 62.50%
+// ---- Do not change root font size
+$browser-root-font-xxl:           62.50%; // 10/16  = 62.50%
+$browser-root-font-xxxl:          62.50%; // 10/16  = 62.50%
