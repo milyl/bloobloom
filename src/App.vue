@@ -1,5 +1,7 @@
 <template>
-  <TheTopNavigation />
+  <Suspense>
+    <TheTopNavigation />
+  </Suspense>
   <div class="app-wrapper">
     <RouterView />
   </div>

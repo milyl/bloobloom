@@ -1,6 +1,10 @@
 <template>
   <div class="top-navigation-bar">
-    <NavigationItem title="Menu" />
+    <NavigationItem
+      title="Menu"
+      @mouseover="isCollapsibleMenuVisible = true"
+      @mouseleave="isCollapsibleMenuVisible = false"
+    />
     <NavigationItem title="Free eye test" />
     <NavigationItem title="About us" />
     <BaseLogo class="top-navigation-bar__logo" />
@@ -14,12 +18,14 @@
 import { defineComponent } from "vue";
 import BaseLogo from "@/components/atoms/BaseLogo.vue";
 import NavigationItem from "../atoms/NavigationItem.vue";
+import { useMainNavigation } from "@/composables/mainNavigation";
 
 export default defineComponent({
   name: "TheTopNavigationBar",
   components: { NavigationItem, BaseLogo },
   setup() {
-    return {};
+    const { isCollapsibleMenuVisible } = useMainNavigation();
+    return { isCollapsibleMenuVisible };
   },
 });
 </script>
