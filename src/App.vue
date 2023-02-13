@@ -1,6 +1,10 @@
 <template>
-  <TheTopNavigation />
-  <RouterView />
+  <Suspense>
+    <TheTopNavigation />
+  </Suspense>
+  <div class="app-wrapper">
+    <RouterView />
+  </div>
 </template>
 
 <script lang="ts">
@@ -17,4 +21,10 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/abstracts/_variables.scss";
+
+.app-wrapper {
+  padding-top: $top-navigation-height;
+}
+</style>
