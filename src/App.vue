@@ -3,7 +3,9 @@
     <TheTopNavigation />
   </Suspense>
   <div class="app-wrapper">
-    <RouterView />
+    <Suspense>
+      <RouterView />
+    </Suspense>
   </div>
 </template>
 
