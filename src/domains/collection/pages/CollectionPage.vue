@@ -23,7 +23,7 @@ export default defineComponent({
     watchEffect(async () => {
       const { collection } = route.params;
       collectionName.value = collection as string;
-      await getGlassesCollection(collection as string);
+      await getGlassesCollection(collection as string, true);
     });
     return { glassesList, collectionName };
   },

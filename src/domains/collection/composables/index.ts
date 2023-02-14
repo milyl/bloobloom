@@ -12,10 +12,17 @@ const filterParams = ref({
   "page[number]": 1,
 });
 export const useGlassesCollection = () => {
-  const getGlassesCollection = async (collectionName: string) => {
+  const getGlassesCollection = async (
+    collectionName: string,
+    clearFetch: boolean = false
+  ) => {
     try {
       const { data } = await getGlasses(collectionName, filterParams.value);
-      glasses.value.push(...data.glasses);
+      if (clearFetch) {
+        glasses.value = data.glasses;
+      } else {
+        glasses.value.push(...data.glasses);
+      }
       _setMetaData(data.meta.total_count, meta.value.pageNumber + 1);
     } catch (err) {
       glasses.value = [];
