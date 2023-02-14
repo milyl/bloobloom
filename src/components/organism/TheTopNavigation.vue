@@ -62,5 +62,6 @@ export default defineComponent({
   position: fixed;
   border-bottom: 1px solid $black;
   width: 100%;
+  background-color: $white;
 }
 </style>

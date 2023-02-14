@@ -49,6 +49,8 @@ export default defineComponent({
     position: absolute;
     right: 0;
     border-right: 1px solid black;
+    border-left: 1px solid black;
+    background-color: $white;
     top: 0;
     min-width: 16rem;
     bottom: 0;
