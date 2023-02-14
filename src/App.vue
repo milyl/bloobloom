@@ -27,6 +27,6 @@ export default defineComponent({
 @import "@/assets/scss/abstracts/_variables.scss";
 
 .app-wrapper {
-  padding-top: $top-navigation-height;
+  padding-top: $top-navigation-bar-height;
 }
 </style>

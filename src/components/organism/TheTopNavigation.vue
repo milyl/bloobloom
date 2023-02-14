@@ -58,10 +58,11 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
 .top-navigation {
-  height: $top-navigation-height;
+  height: $top-navigation-bar-height;
   position: fixed;
   border-bottom: 1px solid $black;
   width: 100%;
   background-color: $white;
+  z-index: $z-2;
 }
 </style>

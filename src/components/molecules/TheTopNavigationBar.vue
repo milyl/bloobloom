@@ -33,7 +33,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
 .top-navigation-bar {
-  height: $top-navigation-height;
+  height: $top-navigation-bar-height;
   width: 100%;
   height: 100%;
   display: flex;

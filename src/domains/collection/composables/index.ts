@@ -32,6 +32,6 @@ export const useGlassesCollection = () => {
   const _resetMetaData = () => _setMetaData(0, 0);
   return {
     getGlassesCollection,
-    glassesList: readonly(glasses),
+    glassesList: glasses,
   };
 };

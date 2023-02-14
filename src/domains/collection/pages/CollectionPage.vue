@@ -1,8 +1,7 @@
 <template>
   <div class="collection-page">
     <CollectionFilters :collection-name="collectionName" />
-    <!-- <CollectionGrid /> -->
-    <pre>{{ glassesList }}</pre>
+    <CollectionGrid :collection="glassesList" />
   </div>
 </template>
 
@@ -11,10 +10,11 @@ import { defineComponent, ref, watchEffect } from "vue";
 import { useGlassesCollection } from "../composables";
 import { useRoute } from "vue-router";
 import CollectionFilters from "@/domains/collection/components/organism/CollectionFilters.vue";
+import CollectionGrid from "@/domains/collection/components/organism/CollectionGrid.vue";
 
 export default defineComponent({
   name: "CollectionPage",
-  components: { CollectionFilters },
+  components: { CollectionFilters, CollectionGrid },
   setup() {
     const route = useRoute();
     const { getGlassesCollection, glassesList } = useGlassesCollection();
