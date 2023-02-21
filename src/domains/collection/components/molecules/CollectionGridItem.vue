@@ -49,6 +49,13 @@ export default defineComponent({
   min-height: 35rem;
   position: relative;
   z-index: $z-0;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    .collection-grid-item__image {
+      transform: scale(1.1);
+    }
+  }
 
   @include respond(sm) {
     min-height: 20rem;
@@ -59,7 +66,7 @@ export default defineComponent({
   }
 
   &__name {
-    padding-top: $p-lg;
+    padding: $p-lg;
     text-transform: uppercase;
     font-weight: $font-weight-bold;
     font-size: $font-size-large;
@@ -74,6 +81,7 @@ export default defineComponent({
     height: 100%;
     object-fit: cover;
     z-index: $-z-1;
+    transition: all 0.3s ease-out;
   }
 }
 </style>
