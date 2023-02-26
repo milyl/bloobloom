@@ -28,5 +28,6 @@ export default defineComponent({
   text-transform: uppercase;
   font-weight: $font-weight-bold;
   font-size: $font-size;
+  cursor: pointer;
 }
 </style>

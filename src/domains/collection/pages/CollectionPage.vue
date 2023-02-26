@@ -1,6 +1,7 @@
 <template>
   <div class="collection-page">
     <CollectionFilters :collection-name="collectionName" />
+    <FiltersBar />
     <CollectionGrid ref="scrollArea" :collection="glassesList" />
     <BaseLoading v-if="loadingGlasses" />
   </div>
@@ -12,12 +13,13 @@ import { useGlassesCollection } from "../composables";
 import { useRoute } from "vue-router";
 import CollectionFilters from "@/domains/collection/components/organism/CollectionFilters.vue";
 import CollectionGrid from "@/domains/collection/components/organism/CollectionGrid.vue";
+import FiltersBar from "@/domains/collection/components/organism/FiltersBar.vue";
 import BaseLoading from "@/components/atoms/BaseLoading.vue";
 import { debounce } from "lodash";
 
 export default defineComponent({
   name: "CollectionPage",
-  components: { CollectionFilters, CollectionGrid, BaseLoading },
+  components: { CollectionFilters, CollectionGrid, BaseLoading, FiltersBar },
   setup() {
     const route = useRoute();
     const {
@@ -30,6 +32,7 @@ export default defineComponent({
     const scrollArea = ref();
 
     const handleScroll = debounce(() => {
+      // eslint-disable-next-line prettier/prettier
       const elementBoundingBottom = scrollArea.value.$el.getBoundingClientRect().bottom;
       if (loadingGlasses.value || noMoreGlassesToFetch.value) return;
 

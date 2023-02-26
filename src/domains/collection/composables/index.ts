@@ -20,7 +20,8 @@ export const useGlassesCollection = () => {
   });
   const getGlassesCollection = async (
     collectionName: string,
-    clearFetch: boolean = false
+    clearFetch: boolean = false,
+    params?: string | undefined
   ) => {
     try {
       loadingGlasses.value = true;
@@ -29,19 +30,20 @@ export const useGlassesCollection = () => {
         glasses.value = [];
       }
 
-      // if (noMoreGlassesToFetch.value) return;
-
-      const { data } = await getGlasses(collectionName, {
-        "page[limit]": meta.value.pageLimit,
-        "page[number]": meta.value.pageNumber,
-      });
+      const { data } = await getGlasses(
+        collectionName,
+        {
+          "page[limit]": meta.value.pageLimit,
+          "page[number]": meta.value.pageNumber,
+        },
+        params
+      );
 
       glasses.value.push(...data.glasses);
 
       _setMetaData(data.meta.total_count, meta.value.pageNumber + 1);
     } catch (err) {
       glasses.value = [];
-      //TODO: error handling
       _resetMetaData();
     } finally {
       loadingGlasses.value = false;

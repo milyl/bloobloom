@@ -1,11 +1,15 @@
 <template>
   <div class="filters-options">
-    <FilterOption name="Colour" />
-    <FilterOption name="Shape" />
+    <FilterOption
+      @click="isFilterBarVisible = !isFilterBarVisible"
+      name="Filters"
+    />
+    <FilterOption name="Search" />
   </div>
 </template>
 
 <script lang="ts">
+import { useFilters } from "@/composables/filters";
 import { defineComponent } from "vue";
 import FilterOption from "../atoms/FilterOption.vue";
 
@@ -13,7 +17,8 @@ export default defineComponent({
   name: "FiltersOptions",
   components: { FilterOption },
   setup() {
-    return {};
+    const { isFilterBarVisible } = useFilters();
+    return { isFilterBarVisible };
   },
 });
 </script>

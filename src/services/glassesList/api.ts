@@ -5,11 +5,15 @@ import { url } from "./url";
 
 export const getGlasses = async (
   collectionName: string,
-  params: any
+  params: any,
+  paramsAsQuery?: string
 ): Promise<AxiosResponse<GlassesListViewModel>> => {
-  const urlRequest: string = url.getGlassesCollection.replace(
+  let urlRequest: string = url.getGlassesCollection.replace(
     "COLLECTION_NAME",
     collectionName
   );
+  if (paramsAsQuery) {
+    urlRequest = `${urlRequest}?${paramsAsQuery}`;
+  }
   return axios.get(urlRequest, { params });
 };
