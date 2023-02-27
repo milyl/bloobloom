@@ -29,6 +29,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 .top-menu-slider {
   position: absolute;
   background-color: #ffffff;
@@ -37,6 +38,10 @@ export default defineComponent({
   transform: translateX(-100%);
   transition: all 0.3s ease-out;
   min-width: calc(3 * 16rem);
+
+  @include respond(sm md) {
+    min-width: 0;
+  }
 
   &--visible {
     transform: translateX(0);

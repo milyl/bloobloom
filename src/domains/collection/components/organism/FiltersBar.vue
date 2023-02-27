@@ -1,5 +1,8 @@
 <template>
-  <div class="filters-bar">
+  <div
+    class="filters-bar"
+    :class="{ 'filters-bar--visible': isFilterBarVisible }"
+  >
     <FilterType
       v-for="filter in availableFilters"
       :name="filter.type"
@@ -35,6 +38,7 @@ export default defineComponent({
       setActiveFilter,
       isFilterActive,
       getFiltersForQuery,
+      isFilterBarVisible,
     } = useFilters();
     const { getGlassesCollection } = useGlassesCollection();
     const route = useRoute();
@@ -53,6 +57,7 @@ export default defineComponent({
       FilterOption,
       isFilterActive,
       setFilters,
+      isFilterBarVisible,
     };
   },
 });
@@ -67,6 +72,12 @@ export default defineComponent({
   background-color: $black;
   gap: 1px;
   border-bottom: 1px solid $black;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+
+  &--visible {
+    opacity: 1;
+  }
 
   & > * {
     flex: 1;

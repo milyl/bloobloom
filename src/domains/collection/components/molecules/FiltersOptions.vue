@@ -4,7 +4,7 @@
       @click="isFilterBarVisible = !isFilterBarVisible"
       name="Filters"
     />
-    <FilterOption name="Search" />
+    <FilterOption name="Search" class="hide--sm hide--md" />
   </div>
 </template>
 

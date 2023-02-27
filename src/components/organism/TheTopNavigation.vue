@@ -64,6 +64,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 .top-navigation {
   height: $top-navigation-bar-height;
   position: fixed;
@@ -71,5 +72,9 @@ export default defineComponent({
   width: 100%;
   background-color: $white;
   z-index: $z-2;
+
+  @include respond(sm md) {
+    height: $top-navigation-bar-height-small;
+  }
 }
 </style>

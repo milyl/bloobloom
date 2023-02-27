@@ -36,12 +36,21 @@ export default defineComponent({
   setup() {
     const { isFilterBarVisible } = useFilters();
     const filterBarHeight = ref<number>(0);
+    const barHeight = computed((): string => `${filterBarHeight.value}px`);
     const translateY = computed((): string => `-${filterBarHeight.value}px`);
     const _getFiltersBarHeight = () => {
       const bar = document.getElementsByClassName(
         "filters-bar"
       )[0] as HTMLElement;
       filterBarHeight.value = bar?.offsetHeight;
+      _setPageHeight(barHeight.value);
+    };
+
+    const _setPageHeight = (barHeight: string) => {
+      const collectionPage = document.getElementsByClassName(
+        "collection-page"
+      )[0] as HTMLElement;
+      collectionPage.style.height = `calc(100% - ${barHeight})`;
     };
 
     onMounted(() => {
@@ -51,7 +60,7 @@ export default defineComponent({
     onUnmounted(() => {
       window.removeEventListener("resize", _getFiltersBarHeight);
     });
-    return { isFilterBarVisible, translateY };
+    return { isFilterBarVisible, translateY, barHeight };
   },
 });
 </script>
@@ -79,5 +88,10 @@ export default defineComponent({
   &--filters-visible {
     transform: translateY(0);
   }
+}
+
+:global(.collection-page) {
+  position: absolute;
+  width: 100%;
 }
 </style>

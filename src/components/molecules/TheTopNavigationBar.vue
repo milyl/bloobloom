@@ -5,11 +5,11 @@
       @mouseover="isCollapsibleMenuVisible = true"
       @mouseleave="isCollapsibleMenuVisible = false"
     />
-    <NavigationItem title="Free eye test" />
-    <NavigationItem title="About us" />
+    <NavigationItem title="Free eye test" class="hide--sm hide--md" />
+    <NavigationItem title="About us" class="hide--sm hide--md" />
     <BaseLogo class="top-navigation-bar__logo" />
-    <NavigationItem title="Help" />
-    <NavigationItem title="Login" />
+    <NavigationItem title="Help" class="hide--sm hide--md" />
+    <NavigationItem title="Login" class="hide--sm hide--md" />
     <NavigationItem title="Bag" />
   </div>
 </template>
@@ -33,7 +33,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
 .top-navigation-bar {
-  height: $top-navigation-bar-height;
   width: 100%;
   height: 100%;
   display: flex;

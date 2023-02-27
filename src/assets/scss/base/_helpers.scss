@@ -1,0 +1,19 @@
+@import "@/assets/scss/abstracts/_breakpoints.scss";
+
+.hide {
+  &--sm {
+    @include respond(sm){
+      display: none!important;
+    }
+  }
+  &--md {
+    @include respond(md){
+      display: none!important;
+    }
+  }
+  &--lg {
+    @include respond(md){
+      display: none!important;
+    }
+  }
+}

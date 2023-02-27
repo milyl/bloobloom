@@ -36,9 +36,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 .base-logo {
   &__logotype {
     height: 2.2rem;
+
+    @include respond(sm md) {
+      height: 1.5rem;
+    }
   }
 }
 </style>
