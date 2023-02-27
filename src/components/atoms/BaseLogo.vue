@@ -13,7 +13,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from "vue";
 import { RouterLink } from "vue-router";
-import LogoType from "@/components/atoms/Logotype.vue";
+import LogoType from "./LogoType.vue";
 
 export enum LogoEnum {
   Logotype = "Logotype",
