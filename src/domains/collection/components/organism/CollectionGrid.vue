@@ -57,6 +57,7 @@ export default defineComponent({
       _getFiltersBarHeight();
       window.addEventListener("resize", _getFiltersBarHeight);
     });
+
     onUnmounted(() => {
       window.removeEventListener("resize", _getFiltersBarHeight);
     });
