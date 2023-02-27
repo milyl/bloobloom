@@ -24,6 +24,7 @@
           :key="item.id"
           :title="trimTitle(item.name)"
           :link="item.configuration_name"
+          @click="isCollapsibleMenuVisible = false"
         />
       </template>
     </TheTopMenuSlider>
@@ -41,7 +42,8 @@ export default defineComponent({
   name: "TheTopNavigation",
   components: { TheTopNavigationBar, TheTopMenuSlider, SliderMenuItem },
   async setup() {
-    const { getCollections, filterCollections } = useMainNavigation();
+    const { getCollections, filterCollections, isCollapsibleMenuVisible } =
+      useMainNavigation();
     const selectedCollectionType = ref<string>("");
 
     const filteredCollectionsList = computed(() =>
@@ -50,17 +52,29 @@ export default defineComponent({
     const trimTitle = (title: string): string =>
       title.replace(selectedCollectionType.value, "").trim();
     await getCollections();
-    return { selectedCollectionType, filteredCollectionsList, trimTitle };
+    return {
+      selectedCollectionType,
+      filteredCollectionsList,
+      trimTitle,
+      isCollapsibleMenuVisible,
+    };
   },
 });
 </script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 .top-navigation {
-  height: $top-navigation-height;
+  height: $top-navigation-bar-height;
   position: fixed;
   border-bottom: 1px solid $black;
   width: 100%;
+  background-color: $white;
+  z-index: $z-2;
+
+  @include respond(sm md) {
+    height: $top-navigation-bar-height-small;
+  }
 }
 </style>

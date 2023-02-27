@@ -3,7 +3,9 @@
     <TheTopNavigation />
   </Suspense>
   <div class="app-wrapper">
-    <RouterView />
+    <Suspense>
+      <RouterView />
+    </Suspense>
   </div>
 </template>
 
@@ -23,8 +25,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 
 .app-wrapper {
-  padding-top: $top-navigation-height;
+  padding-top: $top-navigation-bar-height;
+
+  @include respond(sm md) {
+    padding-top: $top-navigation-bar-height-small;
+  }
 }
 </style>

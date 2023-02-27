@@ -55,7 +55,9 @@ $gap-sm: 1rem;
 $gap-md: map-get($sizes, 'md');
 $gap-lg: map-get($sizes, 'lg');
 
-$top-navigation-height: 5rem;
+$top-navigation-bar-height: 5rem;
+$top-navigation-bar-height-small: 3.9rem;
+$filters-bar-height: 6rem;
 
 $browser-root-font-small:         75.00%; // 12/16  = 75.00%
 $browser-root-font-medium:        75.00%; // 12/16  = 75.00%

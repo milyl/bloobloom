@@ -28,6 +28,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/abstracts/_variables.scss";
+@import "@/assets/scss/abstracts/_breakpoints.scss";
 .navigation-item {
   width: 16rem;
   height: 100%;
@@ -35,6 +36,12 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include respond(sm md lg) {
+    font-size: $font-size-small;
+    width: fit-content;
+    padding: 0 $p-md;
+  }
 
   &:hover {
     .navigation-item__link {
